@@ -7,6 +7,16 @@ type GreetingsProps = {
     // children?: React.ReactNode; arrow function에서는 기본적으로 설정(React.FC Type)되어 있지만 일반 함수에서는 별도로 설정 필요
 }
 
+// const Greetings: React.FC<GreetingsProps> = ({name, onClick}, {mark}: GreetingsProps) => {
+//     const handleClick = () => onClick(name);
+//     return (
+//         <div>
+//         <div>Hello, {name} {mark}</div>
+//         <button onClick={handleClick}>Click Me</button>
+//     </div>
+//     )
+// }
+
 const Greetings: React.FC<GreetingsProps> = ({name, mark = "!", onClick}) => {
     const handleClick = () => onClick(name);
     return (
@@ -15,10 +25,9 @@ const Greetings: React.FC<GreetingsProps> = ({name, mark = "!", onClick}) => {
         <button onClick={handleClick}>Click Me</button>
     </div>
     )
-    
 }
 
-// function Greetings({name, mark}: GreetingsProps) {
+// function Greetings({name, mark}: GreetingsProps, {onClick}: GreetingsProps) {
 //     return (
 //     <div>{name} {mark}</div>
 //     )
@@ -30,7 +39,5 @@ const Greetings: React.FC<GreetingsProps> = ({name, mark = "!", onClick}) => {
 //     mark: '!',
 //     array: ['a', 'b', 'c']
 // }
-
- 
 
 export default Greetings;
